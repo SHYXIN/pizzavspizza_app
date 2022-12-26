@@ -1,10 +1,42 @@
 import React, { Component } from "react";
-import {StyleSheet, SafeAreaView, Text, Image, Button } from "react-native";
+import {StyleSheet, SafeAreaView, Text, Image, Button, FlatList } from "react-native";
+import client from "./../../api/client";
+
 
 class ListView extends Component {
     
+    constructor(props){
+        super(props);
+        this.state = {
+            data:[],
+        };
+    }
+
+    async componentDidMount(){
+        try {
+            const response = await client.get("/");
+            if (!response.ok){
+                this.setState({ data: response.data });
+            }
+        } catch (error) {
+            console.log(error);
+            this.setState({ data: 
+                [
+                    {
+                        "id":1,
+                        "pizzeria_name": "The Empire pizza",
+                        "city": "New York"
+                    }
+                ]
+            });
+        }
+
+    }
+
     render(){
+        const { data } = this.state;
         const mytext = "by ProgramWithUs";
+
         return (
             <SafeAreaView style={styles.center}>
                 <Image
@@ -15,7 +47,18 @@ class ListView extends Component {
                 />
                 <Text style={styles.baseText}>Pizza vs. Pizza App</Text>
                 <Text style={styles.newText}>{mytext}</Text>
-                <Text style={styles.title}>List View</Text>
+
+                <Text>{data.length} Pizzerias</Text>
+                <FlatList
+                    data={data}
+                    keyExtractor={(item)=>item.id.toString()}
+                    renderItem={({ item }) =>(
+                        <Text style={styles.itemText}>
+                            {item.pizzeria_name}, {item.city}
+                        </Text>
+                    )}
+                />
+
                 <Button 
                     title="list item, Click for Details"
                     onPress={()=>this.props.navigation.navigate("Detail")}
@@ -24,6 +67,8 @@ class ListView extends Component {
         );
     }
 }
+
+
 const styles = StyleSheet.create({
     center:{
         flex:1,
@@ -45,6 +90,10 @@ const styles = StyleSheet.create({
     pizzaImage:{
         width:200,
         height:200,
+    },
+    itemText:{
+        color:"green",
+        fontSize:20,
     },
 });
 export default ListView;

@@ -3,7 +3,9 @@ import { StyleSheet, Text, SafeAreaView, Image } from 'react-native';
 import React from 'react';
 import { NavigationContainer } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
-import ListView from './src/screens/components/list_view.js';
+// import ListView from './src/screens/components/list_view.js';  // 用类方式
+import ListView from './src/screens/components/function_list_view.js';
+
 import DetailView from './src/screens/components/detail_view.js';
 import ScreenA from './src/screens/drawer/screenA.js';
 import ScreenB from './src/screens/drawer/screenB.js';

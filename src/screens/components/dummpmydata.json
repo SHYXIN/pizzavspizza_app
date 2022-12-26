@@ -1,0 +1,57 @@
+[
+	{
+		"id": 1,
+		"pizzeria_name": "好吃的披萨1",
+		"street": "",
+		"city": "太原",
+		"state": "NY",
+		"zip_code": 4098,
+		"website": "",
+		"phone_number": "",
+		"description": "",
+		"email": "",
+		"logo_image": "http://127.0.0.1:8000/pizzariaImages/pizzalogo.png",
+		"active": false,
+		"update": "/update/1/",
+		"delete": "/delete/1/",
+		"pizzeria_images": [],
+		"absolute_url": "/1/"
+	},
+	{
+		"id": 2,
+		"pizzeria_name": "披萨2好吃",
+		"street": "A街区",
+		"city": "太原",
+		"state": "NY",
+		"zip_code": 4098,
+		"website": "",
+		"phone_number": "",
+		"description": "",
+		"email": "",
+		"logo_image": "http://127.0.0.1:8000/pizzariaImages/pizzalogo.png",
+		"active": false,
+		"update": "/update/2/",
+		"delete": "/delete/2/",
+		"pizzeria_images": [],
+		"absolute_url": "/2/"
+	},
+	{
+		"id": 3,
+		"pizzeria_name": "披萨3好吃",
+		"street": "A街区",
+		"city": "太原",
+		"state": "NY",
+		"zip_code": 4098,
+		"website": "",
+		"phone_number": "",
+		"description": "",
+		"email": "",
+		"logo_image": "http://127.0.0.1:8000/pizzariaImages/pizzalogo.png",
+		"active": false,
+		"update": "/update/3/",
+		"delete": "/delete/3/",
+		"pizzeria_images": [],
+		"absolute_url": "/3/"
+	}
+
+]
