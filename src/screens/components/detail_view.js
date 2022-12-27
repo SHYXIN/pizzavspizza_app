@@ -25,28 +25,28 @@ const DetailView =({ navigation, route}) => {
 		"absolute_url": "/1/"
 	});
 
-    // const getDetail = async (url) => {
-    //     try {
-    //         const response = await client.get(url);
-    //         if (!response.ok){
-    //             setDetail(response.data);
-    //         }
-    //     } catch (error) {
-    //         console.log(error)
-    //     }
-
-    // };
-
     const getDetail = async (url) => {
         try {
-
-          const response = await fetch('http://127.0.0.1:8000'.concat(url));
-          const json = await response.json();
-          setDetail(json);
+            const response = await client.get(url);
+            if (!response.ok){
+                setDetail(response.data);
+            }
         } catch (error) {
-          console.error(error);
-        } 
+            console.log(error)
+        }
+
     };
+
+    // const getDetail = async (url) => {
+    //     try {
+
+    //       const response = await fetch('http://127.0.0.1:8000'.concat(url));
+    //       const json = await response.json();
+    //       setDetail(json);
+    //     } catch (error) {
+    //       console.error(error);
+    //     } 
+    // };
 
     useEffect(()=>{getDetail(objurl);},[]);
 

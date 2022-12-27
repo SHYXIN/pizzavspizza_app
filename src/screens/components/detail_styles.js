@@ -7,7 +7,7 @@ const styles = StyleSheet.create({
         alignItems:"center",
     },
     title:{
-        fontFamily: "Cochin",
+        // fontFamily: "Cochin",
         margin:10,
         marginBottom:16,
         color:"red",
